@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Blennd",
+      "authorEmail": "ninjas@blannd.com",
+      "authorUrl": "https://blennd.com"
+    }
+  }
+}
