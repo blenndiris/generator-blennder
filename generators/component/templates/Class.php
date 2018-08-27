@@ -25,7 +25,9 @@ class <%= phpClass %> implements InterfaceComponent
     {
         // Copy the ACF array here.
         return array(
-
+            'key' => 'group_<%= key %>',
+            'title' => '<%= label %>',
+            'fields' => array ()
         );
     }
 }

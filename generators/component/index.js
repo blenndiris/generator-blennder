@@ -36,6 +36,7 @@ module.exports = class extends Generator {
     var name = _.kebabCase(this.props.name),
         phpClass = _.upperFirst(_.camelCase(this.props.name)),
         label = _.startCase(this.props.name),
+        key = _.snakeCase(this.props.name),
         hasAnimations = this.props.animate;
 
     this.fs.copyTpl(
@@ -45,6 +46,7 @@ module.exports = class extends Generator {
         phpClass      : phpClass,
         compName      : name,
         label         : label,
+        key           : key,
         hasAnimations : hasAnimations
       }
     );
