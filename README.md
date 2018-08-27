@@ -1,4 +1,5 @@
-# generator-blennder [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-blennder 
+
 > Generator for Blennder Theme Components
 
 ## Installation
