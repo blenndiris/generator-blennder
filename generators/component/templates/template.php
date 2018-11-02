@@ -1,6 +1,6 @@
-<?php if ( isset( $fields ) && is_array( $fields ) ): ?>
+<?php if ( can_render_component( $fields ) ): ?>
 
-<section class="<%= className %>">
+<section <?php echo component_attributes( $fields ); ?> >
     <div class="container">
         <div class="row">
             <div class="col">
