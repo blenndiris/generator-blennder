@@ -4,7 +4,7 @@
  *
  ***********/
 
-import jQuery from 'jQuery';
+import jQuery from 'jquery';
 
 const <%= jsConst %> = (($) => {
 
