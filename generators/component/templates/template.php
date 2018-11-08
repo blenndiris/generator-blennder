@@ -2,11 +2,7 @@
 
 <section <?php echo component_attributes( $fields ); ?> >
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1><%= label %></h1>
-            </div><!-- /.col -->
-        </div><!-- /.row -->
+        <h1><%= label %></h1>
     </div><!-- /.container -->
 </section><!-- /#section -->
 
