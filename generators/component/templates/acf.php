@@ -1,24 +1,9 @@
 <?php
 
 return array(
-    'key' => 'group_<%= compName %>',
+    'key' => 'group_<%= key %>',
     'title' => '<%= label %>',
     'fields' => array(
-        array(
-            'key' => 'field_5bdb35a44e72e',
-            'label' => 'Content',
-            'name' => '',
-            'type' => 'tab',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'placement' => 'left',
-            'endpoint' => 0,
-        ),
+
     ),
 );

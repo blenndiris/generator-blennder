@@ -44,7 +44,6 @@ module.exports = class extends Generator {
       this.templatePath( 'acf.php' ),
       this.destinationPath('./components/' + name + '/' + name + '-acf.php' ),
       {
-        compName      : name,
         label         : label,
         key           : key
       }
