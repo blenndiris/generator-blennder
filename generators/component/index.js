@@ -20,21 +20,21 @@ module.exports = class extends Generator {
       },
       {
         type    : 'confirm',
+        name    : 'hasREADME',
+        message : 'Generate README File?',
+        default : true
+      },
+      {
+        type    : 'confirm',
         name    : 'hasSASS',
-        message : 'Does your component require SASS?',
+        message : 'Generate SASS File?',
         default : true
       },
       {
         type    : 'confirm',
         name    : 'hasJS',
-        message : 'Does your component require Javascript?',
+        message : 'Generate Javascript File?',
         default : false
-      },
-      {
-        type    : 'confirm',
-        name    : 'hasREADME',
-        message : 'Generate README.md?',
-        default : true
       }
     ];
 
