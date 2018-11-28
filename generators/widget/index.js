@@ -77,7 +77,6 @@ module.exports = class extends Generator {
         {
           label         : label,
           className     : name,
-          hasAnimations : hasAnimations
         }
       );
     }
