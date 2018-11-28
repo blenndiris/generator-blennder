@@ -8,26 +8,26 @@ module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the ${chalk.red('generator-blennder')} Component generator!`)
+      yosay(`Welcome to the ${chalk.red('generator-blennder')} Widget generator!`)
     );
 
     const prompts = [
       {
         type    : 'input',
         name    : 'name',
-        message : 'Your Component Name',
+        message : 'Your Widget Name',
         default : 'example'
       },
       {
         type    : 'confirm',
         name    : 'hasSASS',
-        message : 'Does your component require SASS?',
-        default : true
+        message : 'Does your widget require SASS?',
+        default : false
       },
       {
         type    : 'confirm',
         name    : 'hasJS',
-        message : 'Does your component require Javascript?',
+        message : 'Does your widget require Javascript?',
         default : false
       },
       {
@@ -56,7 +56,7 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath( 'template.php' ),
-      this.destinationPath( './components/' + name + '/' + name + '.php'),
+      this.destinationPath( './widgets/' + name + '/' + name + '.php'),
       {
         className     : name,
         label         : label
@@ -64,7 +64,7 @@ module.exports = class extends Generator {
     );
     this.fs.copyTpl(
       this.templatePath( 'acf.php' ),
-      this.destinationPath('./components/' + name + '/' + name + '-acf.php' ),
+      this.destinationPath('./widgets/' + name + '/' + name + '-acf.php' ),
       {
         label         : label,
         key           : key
@@ -73,7 +73,7 @@ module.exports = class extends Generator {
     if(hasSASS){
       this.fs.copyTpl(
         this.templatePath( 'style.scss' ),
-        this.destinationPath( './components/' + name + '/scss/_' + name + '.scss' ),
+        this.destinationPath( './widgets/' + name + '/scss/_' + name + '.scss' ),
         {
           label         : label,
           className     : name,
@@ -84,7 +84,7 @@ module.exports = class extends Generator {
     if(hasJS){
       this.fs.copyTpl(
         this.templatePath('script.js'),
-        this.destinationPath('./components/' + name + '/js/' + name + '.js'),
+        this.destinationPath('./widgets/' + name + '/js/' + name + '.js'),
         {
           label: label,
           jsConst: jsConst,
@@ -94,7 +94,7 @@ module.exports = class extends Generator {
     if(hasREADME){
       this.fs.copyTpl(
         this.templatePath('readme.md'),
-        this.destinationPath('./components/' + name + '/README.md'),
+        this.destinationPath('./widgets/' + name + '/README.md'),
         {
           label: label
         }
