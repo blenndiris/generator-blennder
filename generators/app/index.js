@@ -76,7 +76,7 @@ module.exports = class extends Generator {
         type    : 'confirm',
         name    : 'autogen_pass',
         message : 'Auto Generate Password',
-        default : true,
+        default : false,
         when : function(answers){
           if(answers.type == 'MAMP')
           return true;
@@ -86,7 +86,7 @@ module.exports = class extends Generator {
         type    : 'password',
         name    : 'admin_password',
         message : 'What is your Wordpress Admin Password?',
-        default : 'password',
+        default : 'ninjas',
         when    : function(answers){
           if(answers.autogen_pass ==  false)
           return true;
@@ -200,19 +200,30 @@ module.exports = class extends Generator {
         this.spawnCommandSync('wp', ['core', 'install', '--url=http://'+this.props.url, '--title='+this.props.client_name, '--admin_user='+this.props.admin_user, '--admin_email='+this.props.admin_email, '--admin_password='+this.props.admin_password, '--skip-email']);
       }
       this.spawnCommandSync('wp', ['theme', 'activate', this.props.theme_key]);
+      this.spawnCommandSync('wp', ['plugin', 'install', 'gravityformscli']);
+      this.spawnCommandSync('wp', ['plugin', 'uninstall', 'gravityforms', '--deactivate']);
       this.spawnCommandSync('wp', ['plugin', 'activate', '--all']);
       this.spawnCommandSync('wp', ['plugin', 'deactivate', 'BlenndPreLoader']);
+      this.spawnCommandSync('wp', ['plugin', 'deactivate', 'responsive-menu-pro']);
+      this.spawnCommandSync('wp', ['plugin', 'deactivate', 'backupbuddy']);
+      this.spawnCommandSync('wp', ['plugin', 'deactivate', 'wp-migrate-db-pro']);
+      this.spawnCommandSync('wp', ['plugin', 'deactivate', 'wp-migrate-db-pro-media-files']);
       this.spawnCommandSync('wp', ['post', 'create', '--post_status=publish', '--post_title=Homepage', '--post_type=page']);
-      this.spawnCommandSync('wp', ['post', 'create', '--post_status=publish', '--post_title=About', '--post_type=page']);
-      this.spawnCommandSync('wp', ['post', 'create', '--post_status=publish', '--post_title=Contact', '--post_type=page']);
-      this.spawnCommandSync('wp', ['post', 'create', '--post_status=publish', '--post_title=Style Guide', '--post_type=page']);
-      this.spawnCommandSync('wp', ['post', 'create', '--post_status=publish', '--post_title=Style Forms', '--post_type=page']);
+      this.spawnCommandSync('wp', ['post', 'create', '--post_status=publish', '--post_title=About', '--post_type=page', '--page_template=templates/template-page-builder.php']);
+      this.spawnCommandSync('wp', ['post', 'create', '--post_status=publish', '--post_title=Contact', '--post_type=page', '--page_template=templates/template-page-builder.php']);
+      this.spawnCommandSync('wp', ['post', 'create', '--post_status=publish', '--post_title=Style Guide', '--post_type=page', '--page_template=templates/template-style-guide.php']);
+      this.spawnCommandSync('wp', ['post', 'create', '--post_status=publish', '--post_title=Form Styles', '--post_type=page', '--post_parent=7', '--page_template=templates/template-page-builder.php']);
       this.spawnCommandSync('wp', ['option', 'update', 'blogdescription', this.props.blogdescription]);
       this.spawnCommandSync('wp', ['option', 'update', 'blog_public', 0]);
       this.spawnCommandSync('wp', ['option', 'update', 'show_on_front', 'page']);
       this.spawnCommandSync('wp', ['option', 'update', 'page_on_front', 4]); //Find a way to get the homepage ID
-      this.spawnCommandSync('wp', ['rewrite', 'structure', '/%postname%/']);
-      // this.spawnCommandSync('wp', ['rewrite', 'flush']); // Need mod_rewrite in config.yaml
+      this.spawnCommandSync('wp', ['rewrite', 'structure', '/%postname%/', '--hard']);
+
+      //Gravity Forms Setup
+      this.spawnCommandSync('wp', ['gf', 'install', '--force', '--activate', '--key=caf504634830d624fc6c035a16380114']);
+      this.spawnCommandSync('wp', ['gf', 'setup', '--force']);
+      this.spawnCommandSync('wp', ['gf', 'form', 'import', this.templatePath('gf-test-forms.json')]);
+      this.spawnCommandSync('wp', ['plugin', 'uninstall', 'gravityformscli', '--deactivate']);
     }else {
       this.log("Begin Installing Wordpress...");
       this.spawnCommandSync('wp', ['core', 'download', '--skip-content']);
