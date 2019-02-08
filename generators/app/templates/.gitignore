@@ -1,0 +1,27 @@
+.DS_Store
+
+#Node Modules Folder
+node_modules/
+
+# Ignore everything in the root except the "wp-content" directory.
+/*
+!.gitignore
+!.gitattributes
+!gulpfile.js
+!package.json
+!composer.json
+!webpack.mix.js
+!README.md
+!wp-content/
+
+# Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
+wp-content/*
+!wp-content/themes/
+
+# Ignore everything in the "themes" directory, except the themes you specify
+wp-content/themes/*
+!wp-content/themes/<%= theme %>/
+
+#SASS
+wp-content/themes/<%= theme %>/*.map
+#wp-content/themes/<%= theme %>/vendor

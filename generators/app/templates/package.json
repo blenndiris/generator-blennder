@@ -1,0 +1,31 @@
+{
+  "name": "<%= theme %>",
+  "version": "0.5.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "animate.css": "^3.7.0",
+    "bootstrap": "^4.2.1",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.0.1",
+    "countup.js": "^1.9.3",
+    "generator-blennder": "git+https://github.com/blenndiris/generator-blennder.git",
+    "import-glob-loader": "^1.1.0",
+    "jquery": "^3.3.1",
+    "laravel-mix": "^4.0.13",
+    "node-sass": "^4.11.0",
+    "popper.js": "^1.14.5",
+    "sass-loader": "^7.1.0",
+    "swiper": "^4.4.6",
+    "vue-template-compiler": "^2.5.22",
+    "wowjs": "^1.1.3"
+  }
+}

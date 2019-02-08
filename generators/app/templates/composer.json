@@ -1,0 +1,12 @@
+{
+    "name": "blennd/<%= theme %>",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "wp-content/themes/<%= theme %>/app"
+        }
+    },
+    "config": {
+        "vendor-dir": "wp-content/themes/<%= theme %>/app/vendor"
+    }
+}
