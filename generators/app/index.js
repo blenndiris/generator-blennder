@@ -70,7 +70,7 @@ module.exports = class extends Generator {
         type: 'confirm',
         name: 'autogen_pass',
         message: 'Auto Generate Password',
-        default: false,
+        default: true,
         when: function(answers) {
           if (answers.type === 'MAMP') return true;
         }
@@ -88,7 +88,7 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'admin_email',
         message: 'What is your Wordpress Admin Email?',
-        default: 'seth@blennd.com',
+        default: 'ninjas@blennd.com',
         when: function(answers) {
           if (answers.type === 'MAMP') return true;
         }
@@ -97,7 +97,7 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'blogdescription',
         message: 'Please Enter a Wordpress Site Description:',
-        default: 'Some New Site Description',
+        default: 'The Client Site',
         when: function(answers) {
           if (answers.type === 'MAMP') return true;
         }
