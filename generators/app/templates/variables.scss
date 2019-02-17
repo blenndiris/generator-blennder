@@ -1,0 +1,26 @@
+//Font Awesome
+$font-fa: 'Font Awesome 5 Pro';
+$fa-font-path: '/wp-content/themes/<%= theme %>/assets/fonts/font-awesome/webfonts';
+
+//Variables
+$imgpath: '/wp-content/themes/<%= theme %>/assets/img';
+
+//Social Icon Colors
+$facebook:          #0071BB;
+$twitter:           #1EB1D2;
+$instagram-yellow:  #b900b4;
+$instagram-red:     #f20407;
+$instagram-purple:  #ffd521;
+$youtube:           #CC5E5E;
+$google-plus:       #CC5E5E;
+$flickr-blue:       #0062DD;
+$flickr-pink:       #FF0084;
+$rss:               orange;
+
+//Animation Defaults
+$animate-duration:  0.25s;
+$animate-type:      'ease-in-out';
+$animate:           #{$animate-type} $animate-duration;
+
+// Forms
+$left-align-spacing:  150px;

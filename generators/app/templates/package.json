@@ -1,6 +1,6 @@
 {
   "name": "<%= theme %>",
-  "version": "0.5.2",
+  "version": "0.6.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,19 +13,19 @@
   "license": "ISC",
   "devDependencies": {
     "animate.css": "^3.7.0",
-    "bootstrap": "^4.2.1",
+    "bootstrap": "^4.3.1",
     "browser-sync": "^2.26.3",
     "browser-sync-webpack-plugin": "^2.0.1",
     "countup.js": "^1.9.3",
-    "generator-blennder": "git+https://github.com/blenndiris/generator-blennder.git",
+    "imagesloaded": "^4.1.4",
     "import-glob-loader": "^1.1.0",
     "jquery": "^3.3.1",
-    "laravel-mix": "^4.0.13",
+    "laravel-mix": "^4.0.14",
     "node-sass": "^4.11.0",
-    "popper.js": "^1.14.5",
+    "popper.js": "^1.14.7",
     "sass-loader": "^7.1.0",
     "swiper": "^4.4.6",
-    "vue-template-compiler": "^2.5.22",
+    "vue-template-compiler": "^2.6.6",
     "wowjs": "^1.1.3"
   }
 }

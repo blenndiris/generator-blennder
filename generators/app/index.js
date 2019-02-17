@@ -153,7 +153,7 @@ module.exports = class extends Generator {
       }
     );
     this.fs.copyTpl(
-      this.templatePath('_variables.scss'),
+      this.templatePath('variables.scss'),
       this.destinationPath(
         './wp-content/themes/' + this.props.themeKey + '/assets/scss/_variables.scss'
       ),
@@ -161,9 +161,20 @@ module.exports = class extends Generator {
         theme: this.props.themeKey
       }
     );
-    this.fs.copyTpl(this.templatePath('.gitignore'), this.destinationPath('.gitignore'), {
-      theme: this.props.themeKey
-    });
+    this.fs.copyTpl(
+      this.templatePath('gitignore.txt'),
+      this.destinationPath('.gitignore'),
+      {
+        theme: this.props.themeKey
+      }
+    );
+    this.fs.copyTpl(
+      this.templatePath('gitattributes.txt'),
+      this.destinationPath('.gitattributes'),
+      {
+        theme: this.props.themeKey
+      }
+    );
     this.fs.copyTpl(
       this.templatePath('composer.json'),
       this.destinationPath('composer.json'),
