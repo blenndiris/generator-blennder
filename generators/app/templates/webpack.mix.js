@@ -15,12 +15,15 @@ mix.webpackConfig({
         ]
         }
     })
-   .js(path + 'assets/js/scripts.js', path + 'dist/js')
-   .sass(path + 'assets/scss/style.scss', path + 'dist/css', {
+    .js(path + 'assets/js/scripts.js', path + 'dist/js')
+    .sass(path + 'assets/scss/style.scss', path + 'dist/css', {
         implementation: require('node-sass')
     })
     .options({
         processCssUrls: false,
+        postCss: [
+            require('autoprefixer')
+        ],
         autoprefixer: {
             options: {
                 browsers: [
@@ -29,8 +32,8 @@ mix.webpackConfig({
             }
         }
     })
-   .setPublicPath(path + 'dist')
-   .browserSync({
+    .setPublicPath(path + 'dist')
+    .browserSync({
         proxy: '<%= url %>',
         files: [
             path + 'dist/css/{*,**/*}.css',

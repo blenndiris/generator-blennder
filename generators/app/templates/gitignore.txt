@@ -9,9 +9,9 @@ node_modules/
 !.gitattributes
 !gulpfile.js
 !package.json
-!composer.json
 !webpack.mix.js
 !README.md
+!robots.txt
 !wp-content/
 
 # Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
@@ -24,4 +24,3 @@ wp-content/themes/*
 
 #SASS
 wp-content/themes/<%= theme %>/*.map
-#wp-content/themes/<%= theme %>/vendor
