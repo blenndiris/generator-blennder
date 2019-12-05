@@ -2,7 +2,7 @@
 
 > Generator for Blennder Theme Components
 
-Version `1.5.3`
+Version `1.5.4`
 
 ## Installation
 
