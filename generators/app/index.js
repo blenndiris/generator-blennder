@@ -176,13 +176,6 @@ module.exports = class extends Generator {
       }
     );
     this.fs.copyTpl(
-      this.templatePath('composer.json'),
-      this.destinationPath('composer.json'),
-      {
-        theme: this.props.themeKey
-      }
-    );
-    this.fs.copyTpl(
       this.templatePath('package.json'),
       this.destinationPath('package.json'),
       {
