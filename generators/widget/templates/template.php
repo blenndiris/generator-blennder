@@ -1,5 +1,7 @@
-<section <?php echo component_attributes( $fields ); ?> >
-	<div class="container">
+<?php if ( can_render_widget( $fields ) ): ?>
+
+	<section <?php echo component_attributes( $fields ); ?> >
 		<h1><%= label %></h1>
-	</div><!-- /.container -->
-</section><!-- /#section -->
+	</section>
+
+<?php endif; ?>

@@ -2,6 +2,8 @@
 
 <section <?php echo component_attributes( $fields ); ?> >
 
+	<?php echo component_styles( $fields ); ?>
+
 	<?php if(!empty($fields['settings_anchor_selector'])): ?>
 	<a id="<?php echo $fields['settings_anchor_selector'];?>" class="anchor"></a>
 	<?php endif; ?>

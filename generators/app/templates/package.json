@@ -1,6 +1,6 @@
 {
   "name": "<%= theme %>",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,8 +24,8 @@
     "jquery": "^3.4.1",
     "laravel-mix": "^4.1.4",
     "node-sass": "^4.12.0",
-    "popper.js": "^1.15.0",
-    "resolve-url-loader": "^3.1.0",
+    "popper.js": "^1.16.0",
+    "resolve-url-loader": "^3.1.1",
     "sass-loader": "^7.3.1",
     "swiper": "^4.5.1",
     "vue-template-compiler": "^2.6.10",
